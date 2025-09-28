@@ -1,0 +1,118 @@
+/* Navbar Container */
+.navbar {
+    background: #1e88e5;
+    color: white;
+    padding: 12px 20px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  
+  .navbar-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Logo */
+  .logo a {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .logo span {
+    color: #ffeb3b; /* Accent color */
+  }
+  
+  /* Desktop Links */
+  .links {
+    display: flex;
+    gap: 25px;
+  }
+  
+  .links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .links a:hover {
+    color: #ffeb3b;
+  }
+  
+  /* Hamburger (Mobile) */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hamburger Animation */
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+  }
+  
+  /* Mobile Menu */
+  @media (max-width: 768px) {
+    .links {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: #1e88e5;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 15px 25px;
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      display: none;
+    }
+  
+    .links.open {
+      display: flex;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  }
+
+  /* Existing styles stay the same */
+
+/* Active Link Highlight */
+.links a.active {
+    color: #ffeb3b; /* Yellow accent */
+    font-weight: 600;
+    border-bottom: 2px solid #ffeb3b;
+    padding-bottom: 2px;
+  }
