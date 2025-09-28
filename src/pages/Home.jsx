@@ -64,9 +64,7 @@ function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="footer">
-        <p>© {new Date().getFullYear()} StudyBridge LLC. All rights reserved.</p>
-      </footer>
+    
     </div>
   );
 }

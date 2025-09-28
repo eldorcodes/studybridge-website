@@ -1,0 +1,56 @@
+.terms-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    font-family: "Arial", sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .terms-title {
+    font-size: 2.2rem;
+    color: #1e88e5;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .terms-updated {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 40px;
+  }
+  
+  .terms-content section {
+    margin-bottom: 30px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  
+  .terms-content h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #1e88e5;
+  }
+  
+  .terms-content p,
+  .terms-content ul {
+    font-size: 1rem;
+    color: #444;
+  }
+  
+  .terms-content ul {
+    margin-left: 20px;
+    list-style: disc;
+  }
+  
+  .terms-content a {
+    color: #1e88e5;
+    text-decoration: none;
+  }
+  
+  .terms-content a:hover {
+    text-decoration: underline;
+  }

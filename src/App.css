@@ -117,14 +117,27 @@ p {
 
 /* Footer */
 .footer {
-  background: #222;
-  color: #bbb;
+  background: #1e88e5;
+  color: white;
+  padding: 20px;
   text-align: center;
-  padding: 15px;
   margin-top: 40px;
 }
 
-.footer p {
-  margin: 0;
-  font-size: 0.9rem;
+.footer-links {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 0.95rem;
+}
+
+.footer-links a {
+  color: #ffeb3b;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+  opacity: 0.8;
 }
