@@ -1,0 +1,45 @@
+.payment-page {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    color: #333;
+  }
+  
+  .payment-page h1 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+    color: #1e88e5;
+  }
+  
+  .payment-page p {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .payment-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  }
+  
+  .payment-box button {
+    background: #1e88e5;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    width: 100%;
+  }
+  
+  .payment-box button:hover {
+    background: #1669bb;
+    transform: translateY(-2px);
+  }

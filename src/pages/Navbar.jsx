@@ -39,6 +39,13 @@ export default function Navbar() {
             Pricing
           </NavLink>
           <NavLink
+            to="/payment"
+            className={({ isActive }) => (isActive ? "active" : "")}
+            onClick={() => setIsOpen(false)}
+          >
+            Make a payment
+          </NavLink>
+          <NavLink
             to="/contact"
             className={({ isActive }) => (isActive ? "active" : "")}
             onClick={() => setIsOpen(false)}

@@ -6,6 +6,7 @@ import Contact from "./pages/Contact";
 import Navbar from "./pages/Navbar";
 import Pricing from "./pages/Pricing";
 import Projects from "./pages/Projects";
+import Payment from "./pages/Payment";
 
 function Footer() {
   return (
@@ -51,6 +52,7 @@ function App() {
         <Route path="/success" element={<Success />} />
         <Route path="/cancel" element={<Cancel />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
       <Footer />
     </Router>
