@@ -1,45 +1,61 @@
 .payment-page {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 50px 20px;
-    text-align: center;
-    font-family: "Arial", sans-serif;
-    color: #333;
-  }
-  
-  .payment-page h1 {
-    font-size: 2rem;
-    margin-bottom: 12px;
-    color: #1e88e5;
-  }
-  
-  .payment-page p {
-    color: #666;
-    margin-bottom: 25px;
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-  
-  .payment-box {
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-  }
-  
-  .payment-box button {
-    background: #1e88e5;
-    color: white;
-    border: none;
-    padding: 14px 20px;
-    font-size: 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    width: 100%;
-  }
-  
-  .payment-box button:hover {
-    background: #1669bb;
-    transform: translateY(-2px);
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  background: #f9fafc;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.payment-page h1 {
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.payment-page p {
+  color: #555;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+.payment-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.payment-box input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.payment-box button {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #635bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.payment-box button:hover {
+  background-color: #5046d3;
+}
+
+.paypal-button-container {
+  margin-top: 10px;
+}
