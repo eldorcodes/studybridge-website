@@ -9,6 +9,7 @@ import Projects from "./pages/Projects";
 import Payment from "./pages/Payment";
 import Privacy from "./pages/Privacy";   // ✅ Import Privacy
 import Terms from "./pages/Terms";       // ✅ Import Terms
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function Footer() {
   return (
@@ -52,7 +53,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/payment" element={<Payment />} />
-        <Route path="/privacy" element={<Privacy />} />     {/* ✅ Privacy route */}
+        <Route path="/privacy" element={<PrivacyPolicy />} />     {/* ✅ Privacy route */}
         <Route path="/terms" element={<Terms />} />         {/* ✅ Terms route */}
         <Route path="/success" element={<Success />} />
         <Route path="/cancel" element={<Cancel />} />

@@ -1,0 +1,146 @@
+:root{
+    --pp-bg: #f8fafc;
+    --pp-surface: #ffffff;
+    --pp-text: #0f172a;
+    --pp-muted: #64748b;
+    --pp-border: #e2e8f0;
+    --pp-brand: #002855;   /* primary brand */
+    --pp-accent: #2563EB;  /* accent */
+    --pp-shadow: 0 8px 24px rgba(2, 6, 23, 0.06);
+  }
+  
+  * { box-sizing: border-box; }
+  
+  .pp-wrapper {
+    min-height: 100dvh;
+    background: var(--pp-bg);
+    color: var(--pp-text);
+  }
+  
+  .pp-hero {
+    background: linear-gradient(135deg, var(--pp-brand), #02408f);
+    color: #fff;
+  }
+  
+  .pp-hero-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 20px 36px;
+  }
+  
+  .pp-title {
+    margin: 0 0 6px;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  
+  .pp-subtitle {
+    margin: 0;
+    color: #dbeafe;
+    font-size: 14px;
+  }
+  
+  .pp-content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 20px 56px;
+  }
+  
+  .pp-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  @media (min-width: 880px) {
+    .pp-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .pp-card {
+    background: var(--pp-surface);
+    border: 1px solid var(--pp-border);
+    border-radius: 14px;
+    padding: 20px 20px 18px;
+    box-shadow: var(--pp-shadow);
+  }
+  
+  .pp-card h2 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  
+  .pp-card h3 {
+    margin: 16px 0 8px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  
+  .pp-card p {
+    margin: 8px 0 10px;
+    line-height: 1.65;
+    color: var(--pp-text);
+  }
+  
+  .pp-ul {
+    margin: 8px 0 10px 0;
+    padding: 0 0 0 18px;
+    line-height: 1.65;
+  }
+  
+  .pp-link {
+    color: var(--pp-accent);
+    text-decoration: underline;
+  }
+  
+  .pp-app-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0 8px;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .pp-app-badge {
+    background: #eef2ff;
+    color: #1e3a8a;
+    border: 1px solid #c7d2fe;
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 12.5px;
+    font-weight: 700;
+  }
+  
+  .pp-app-note {
+    border: 1px dashed var(--pp-border);
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin: 12px 0;
+    background: #fcfcff;
+  }
+  
+  .pp-app-note-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  
+  .pp-app-note-head h3 {
+    margin: 0;
+    font-size: 15.5px;
+    font-weight: 800;
+  }
+  
+  .pp-app-note-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--pp-accent);
+    display: inline-block;
+  }
