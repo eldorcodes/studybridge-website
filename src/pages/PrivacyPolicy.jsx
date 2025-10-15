@@ -5,9 +5,23 @@ export default function PrivacyPolicy({
   companyName = "StudyBridge LLC",
   contactEmail = "support@studybridge.io",
   websiteUrl = "https://studybridge.io",
-  lastUpdated = "August 27, 2025",
+  lastUpdated = "October 15, 2025",
   retentionHours = 2,
   apps = [
+    // ✅ NEW: Video to GIF Expert
+    {
+      id: "videotogif",
+      name: "Video to GIF Expert",
+      bullets: [
+        "Converts videos into high-quality GIFs directly on your device.",
+        "Processing happens locally on your phone whenever possible; for advanced processing, temporary server use may occur.",
+        "We do not access your videos unless you select them for conversion.",
+        "Converted GIFs are stored only on your device; temporary uploads (if used) are auto-deleted after processing.",
+        "Displays ads via Google AdMob; an optional Remove Ads purchase may be offered (where available).",
+      ],
+      retentionHours: 2,
+    },
+
     // ✅ NEW: QR Code Generator (on-device)
     {
       id: "qrcode",
@@ -16,9 +30,9 @@ export default function PrivacyPolicy({
         "Generates QR codes for text, URLs, Wi-Fi, contacts, events, and more.",
         "Processing happens on-device; we do not upload your input to our servers.",
         "You can optionally save generated QR images to your Photos or share them.",
-        "Displays ads via Google AdMob; an optional Remove Ads purchase may be offered (where available)."
+        "Displays ads via Google AdMob; an optional Remove Ads purchase may be offered (where available).",
       ],
-      retentionHours: 0, // no server-side files retained
+      retentionHours: 0,
     },
 
     // ✅ NEW: Image Compressor app
@@ -29,7 +43,7 @@ export default function PrivacyPolicy({
         "Compress, resize, and convert images (JPG, PNG, WEBP, PDF).",
         "Only the photos you select are processed—no background access.",
         "Where server processing is used, files are auto-deleted after processing.",
-        "Shows ads via Google AdMob; an optional Remove Ads purchase may be offered."
+        "Shows ads via Google AdMob; an optional Remove Ads purchase may be offered.",
       ],
       retentionHours: 2,
     },
@@ -42,7 +56,7 @@ export default function PrivacyPolicy({
         "Creates compliant ID, passport, and visa photos from your images.",
         "Includes optional background cleanup (e.g., white), crop & size tools.",
         "Only the photo you choose is processed—no gallery access without your action.",
-        "Files are auto-deleted after processing."
+        "Files are auto-deleted after processing.",
       ],
       retentionHours: 2,
     },
@@ -52,7 +66,7 @@ export default function PrivacyPolicy({
       bullets: [
         "Converts HEIC images to JPG, PNG, PDF, or WEBP.",
         "Only images you select are uploaded.",
-        "Files are auto-deleted after conversion."
+        "Files are auto-deleted after conversion.",
       ],
       retentionHours: 2,
     },
@@ -62,7 +76,7 @@ export default function PrivacyPolicy({
       bullets: [
         "Combines multiple PDF files into a single document.",
         "Temporary merged file is generated to deliver your result.",
-        "Files are auto-deleted after conversion."
+        "Files are auto-deleted after conversion.",
       ],
       retentionHours: 2,
     },
@@ -72,7 +86,7 @@ export default function PrivacyPolicy({
       bullets: [
         "Converts PDF files to Word (DOCX) and Word documents to PDF.",
         "Converted documents are processed only to complete your request.",
-        "Files are auto-deleted after conversion."
+        "Files are auto-deleted after conversion.",
       ],
       retentionHours: 2,
     },
@@ -82,7 +96,7 @@ export default function PrivacyPolicy({
       bullets: [
         "Convert your images into a single high-quality PDF.",
         "Simple, fast, and secure conversion process.",
-        "Files are auto-deleted after conversion."
+        "Files are auto-deleted after conversion.",
       ],
       retentionHours: 2,
     },
@@ -105,12 +119,12 @@ export default function PrivacyPolicy({
           </p>
           <ul className="pp-app-list">
             {apps.map((a) => (
-              <li key={a.id} className="pp-app-badge">{a.name}</li>
+              <li key={a.id} className="pp-app-badge">
+                {a.name}
+              </li>
             ))}
           </ul>
-          <p>
-            By using our apps, you agree to the practices described in this Privacy Policy.
-          </p>
+          <p>By using our apps, you agree to the practices described in this Privacy Policy.</p>
         </div>
 
         <div className="pp-grid">
@@ -119,13 +133,13 @@ export default function PrivacyPolicy({
             <h3>1) Files You Upload</h3>
             <ul className="pp-ul">
               <li>
-                Files you select for processing (e.g., images, PDFs, Word documents) may be
+                Files you select for processing (e.g., images, PDFs, videos, Word documents) may be
                 temporarily uploaded to our secure servers only to complete your request where
                 server-side processing is required.
               </li>
               <li>
-                All uploaded files are automatically deleted within approximately{" "}
-                {retentionHours} hour{retentionHours === 1 ? "" : "s"} after processing.
+                All uploaded files are automatically deleted within approximately {retentionHours}{" "}
+                hour{retentionHours === 1 ? "" : "s"} after processing.
               </li>
               <li>We never sell or use your documents for advertising or model training.</li>
             </ul>
@@ -133,25 +147,25 @@ export default function PrivacyPolicy({
             <h3>2) Diagnostics & Usage Data</h3>
             <ul className="pp-ul">
               <li>
-                Limited, non-identifying data (e.g., error logs, device/OS version, timestamps)
-                may be collected to maintain reliability, security, and performance.
+                Limited, non-identifying data (e.g., error logs, device/OS version, timestamps) may
+                be collected to maintain reliability, security, and performance.
               </li>
             </ul>
 
             <h3>3) Payments</h3>
             <ul className="pp-ul">
               <li>
-                Purchases and subscriptions are processed by Apple App Store or Google Play.
-                We do not store credit card numbers.
+                Purchases and subscriptions are processed by Apple App Store or Google Play. We do
+                not store credit card numbers.
               </li>
             </ul>
 
             <h3>4) Advertising & Analytics (AdMob)</h3>
             <ul className="pp-ul">
               <li>
-                Some apps display ads via Google AdMob. AdMob may collect device identifiers
-                (e.g., IDFA/AAID), approximate location (derived from IP), app interaction, and
-                performance data to provide and measure ads.
+                Some apps display ads via Google AdMob. AdMob may collect device identifiers (e.g.,
+                IDFA/AAID), approximate location (derived from IP), app interaction, and performance
+                data to provide and measure ads.
               </li>
               <li>
                 You can reset or limit ad tracking in your device settings. If you purchase a
@@ -164,12 +178,12 @@ export default function PrivacyPolicy({
             <h2>Permissions We Request</h2>
             <ul className="pp-ul">
               <li>
-                <strong>Files / Storage:</strong> to allow you to select photos/documents for
-                processing and save results locally.
+                <strong>Files / Storage:</strong> to allow you to select photos, videos, or documents
+                for processing and save results locally.
               </li>
               <li>
-                <strong>Camera (optional for certain apps):</strong> to capture a new photo if you
-                choose to take one inside the app.
+                <strong>Camera (optional for certain apps):</strong> to capture a new photo or video
+                if you choose to do so inside the app.
               </li>
               <li>
                 <strong>Internet Access:</strong> to securely upload files for processing and
@@ -179,7 +193,10 @@ export default function PrivacyPolicy({
 
             <h2>How We Use Information</h2>
             <ul className="pp-ul">
-              <li>Provide the processing services you request (e.g., compression, conversion, merging).</li>
+              <li>
+                Provide the conversion, compression, or editing services you request (e.g., GIF
+                creation, PDF merging).
+              </li>
               <li>Improve app reliability, security, and user experience.</li>
               <li>Respond to support requests you send us.</li>
             </ul>
@@ -189,7 +206,8 @@ export default function PrivacyPolicy({
               <li>We do not sell or trade your data.</li>
               <li>
                 Limited sharing with trusted service providers (e.g., cloud hosting, error
-                monitoring, ad networks for apps that show ads) strictly to operate our apps, under confidentiality obligations.
+                monitoring, ad networks for apps that show ads) strictly to operate our apps, under
+                confidentiality obligations.
               </li>
               <li>We may disclose information if required by law.</li>
             </ul>
@@ -209,13 +227,16 @@ export default function PrivacyPolicy({
             <ul className="pp-ul">
               <li>We use HTTPS for secure transfers where supported.</li>
               <li>Access to systems is restricted to authorized personnel.</li>
-              <li>No method of transmission or storage is 100% secure, but we use industry-standard safeguards.</li>
+              <li>
+                No method of transmission or storage is 100% secure, but we use industry-standard
+                safeguards.
+              </li>
             </ul>
 
             <h2>Children’s Privacy</h2>
             <p>
-              Our apps are not directed to children under 13 (or under 16 in the EU). If we
-              learn that such data has been provided, we will delete it promptly.
+              Our apps are not directed to children under 13 (or under 16 in the EU). If we learn
+              that such data has been provided, we will delete it promptly.
             </p>
           </div>
 
@@ -243,14 +264,14 @@ export default function PrivacyPolicy({
           <div className="pp-card">
             <h2>Your Rights</h2>
             <p>
-              Depending on your region (e.g., EU/EEA, UK, California), you may have rights to access,
-              correct, or delete your personal data. Contact us to exercise these rights.
+              Depending on your region (e.g., EU/EEA, UK, California), you may have rights to
+              access, correct, or delete your personal data. Contact us to exercise these rights.
             </p>
 
             <h2>International Transfers</h2>
             <p>
-              Data may be processed in the United States and other countries. By using our apps,
-              you consent to such transfers as permitted by law.
+              Data may be processed in the United States and other countries. By using our apps, you
+              consent to such transfers as permitted by law.
             </p>
 
             <h2>Changes to This Policy</h2>

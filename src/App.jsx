@@ -53,7 +53,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/payment" element={<Payment />} />
-        <Route path="/privacy" element={<PrivacyPolicy />} />     {/* ✅ Privacy route */}
+        <Route path="/privacy" element={<PrivacyPolicy />} />  
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />   {/* ✅ Privacy route */}
         <Route path="/terms" element={<Terms />} />         {/* ✅ Terms route */}
         <Route path="/success" element={<Success />} />
         <Route path="/cancel" element={<Cancel />} />
