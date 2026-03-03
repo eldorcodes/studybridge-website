@@ -5,9 +5,23 @@ export default function PrivacyPolicy({
   companyName = "StudyBridge LLC",
   contactEmail = "support@studybridge.io",
   websiteUrl = "https://studybridge.io",
-  lastUpdated = "October 15, 2025",
+  lastUpdated = "March 03, 2026",
   retentionHours = 2,
   apps = [
+    // ✅ NEW: ScamShield AI (offline)
+    {
+      id: "scamshieldai",
+      name: "ScamShield AI",
+      bullets: [
+        "ScamShield AI analyzes only the text you paste into the app, on your device.",
+        "Message text is NOT uploaded to our servers and is NOT shared with any third-party AI service.",
+        "No cloud processing is used for message analysis. The detection engine runs locally (offline) on-device.",
+        "If you use History, recent scan results are stored locally on your device (AsyncStorage) and can be cleared at any time.",
+        "ScamShield AI does not access your SMS inbox or messages automatically; you manually paste text for analysis.",
+      ],
+      retentionHours: 0,
+    },
+
     // ✅ NEW: Video to GIF Expert
     {
       id: "videotogif",
@@ -41,7 +55,7 @@ export default function PrivacyPolicy({
       name: "Image Compressor Studio",
       bullets: [
         "Compress, resize, and convert images (JPG, PNG, WEBP, PDF).",
-        "Only the photos you select are processed—no background access.",
+        "Only the photos you select are processed - no background access.",
         "Where server processing is used, files are auto-deleted after processing.",
         "Shows ads via Google AdMob; an optional Remove Ads purchase may be offered.",
       ],
@@ -54,8 +68,8 @@ export default function PrivacyPolicy({
       name: "ID Photo Maker: Passport & Visa Photos",
       bullets: [
         "Creates compliant ID, passport, and visa photos from your images.",
-        "Includes optional background cleanup (e.g., white), crop & size tools.",
-        "Only the photo you choose is processed—no gallery access without your action.",
+        "Includes optional background cleanup (e.g., white), crop and size tools.",
+        "Only the photo you choose is processed - no gallery access without your action.",
         "Files are auto-deleted after processing.",
       ],
       retentionHours: 2,
@@ -65,7 +79,7 @@ export default function PrivacyPolicy({
       name: "HEIC Converter: JPG PDF PNG WEBP",
       bullets: [
         "Converts HEIC images to JPG, PNG, PDF, or WEBP.",
-        "Only images you select are uploaded.",
+        "Only images you select are uploaded (when server processing is used).",
         "Files are auto-deleted after conversion.",
       ],
       retentionHours: 2,
@@ -82,7 +96,7 @@ export default function PrivacyPolicy({
     },
     {
       id: "docuconvert",
-      name: "DocuConvert: PDF ↔ Word",
+      name: "DocuConvert: PDF <-> Word",
       bullets: [
         "Converts PDF files to Word (DOCX) and Word documents to PDF.",
         "Converted documents are processed only to complete your request.",
@@ -115,7 +129,7 @@ export default function PrivacyPolicy({
         <div className="pp-card">
           <p>
             This Privacy Policy applies to all mobile applications developed and published by{" "}
-            <strong>{companyName}</strong> (“we”, “us”, or “our”), including but not limited to:
+            <strong>{companyName}</strong> ("we", "us", or "our"), including but not limited to:
           </p>
           <ul className="pp-app-list">
             {apps.map((a) => (
@@ -129,8 +143,9 @@ export default function PrivacyPolicy({
 
         <div className="pp-grid">
           <div className="pp-card">
-            <h2>Information We Collect & Process</h2>
-            <h3>1) Files You Upload</h3>
+            <h2>Information We Collect and Process</h2>
+
+            <h3>1) Files You Upload (Some Apps Only)</h3>
             <ul className="pp-ul">
               <li>
                 Files you select for processing (e.g., images, PDFs, videos, Word documents) may be
@@ -141,10 +156,26 @@ export default function PrivacyPolicy({
                 All uploaded files are automatically deleted within approximately {retentionHours}{" "}
                 hour{retentionHours === 1 ? "" : "s"} after processing.
               </li>
-              <li>We never sell or use your documents for advertising or model training.</li>
+              <li>We never sell your documents or use them for advertising or model training.</li>
             </ul>
 
-            <h3>2) Diagnostics & Usage Data</h3>
+            <h3>2) Text You Enter (ScamShield AI)</h3>
+            <ul className="pp-ul">
+              <li>
+                ScamShield AI analyzes only the text you paste into the app. The text is processed
+                locally on your device.
+              </li>
+              <li>
+                ScamShield AI does not upload message text to our servers and does not share message
+                text with any third-party AI service.
+              </li>
+              <li>
+                If you enable History, scan results are stored locally on your device and can be
+                cleared at any time.
+              </li>
+            </ul>
+
+            <h3>3) Diagnostics and Usage Data</h3>
             <ul className="pp-ul">
               <li>
                 Limited, non-identifying data (e.g., error logs, device/OS version, timestamps) may
@@ -152,7 +183,7 @@ export default function PrivacyPolicy({
               </li>
             </ul>
 
-            <h3>3) Payments</h3>
+            <h3>4) Payments</h3>
             <ul className="pp-ul">
               <li>
                 Purchases and subscriptions are processed by Apple App Store or Google Play. We do
@@ -160,7 +191,7 @@ export default function PrivacyPolicy({
               </li>
             </ul>
 
-            <h3>4) Advertising & Analytics (AdMob)</h3>
+            <h3>5) Advertising and Analytics (AdMob)</h3>
             <ul className="pp-ul">
               <li>
                 Some apps display ads via Google AdMob. AdMob may collect device identifiers (e.g.,
@@ -169,7 +200,7 @@ export default function PrivacyPolicy({
               </li>
               <li>
                 You can reset or limit ad tracking in your device settings. If you purchase a
-                “Remove Ads” option (where available), the app stops requesting ads.
+                "Remove Ads" option (where available), the app stops requesting ads.
               </li>
             </ul>
           </div>
@@ -187,16 +218,15 @@ export default function PrivacyPolicy({
               </li>
               <li>
                 <strong>Internet Access:</strong> to securely upload files for processing and
-                deliver results where applicable.
+                deliver results where applicable. ScamShield AI does not require internet for pasted
+                text analysis.
               </li>
             </ul>
 
             <h2>How We Use Information</h2>
             <ul className="pp-ul">
-              <li>
-                Provide the conversion, compression, or editing services you request (e.g., GIF
-                creation, PDF merging).
-              </li>
+              <li>Provide the services you request (e.g., conversion, compression, editing).</li>
+              <li>Provide message risk analysis in ScamShield AI using on-device processing.</li>
               <li>Improve app reliability, security, and user experience.</li>
               <li>Respond to support requests you send us.</li>
             </ul>
@@ -205,9 +235,13 @@ export default function PrivacyPolicy({
             <ul className="pp-ul">
               <li>We do not sell or trade your data.</li>
               <li>
-                Limited sharing with trusted service providers (e.g., cloud hosting, error
-                monitoring, ad networks for apps that show ads) strictly to operate our apps, under
-                confidentiality obligations.
+                We may share limited data with trusted service providers (e.g., cloud hosting for
+                file processing apps, error monitoring, ad networks for apps that show ads) strictly
+                to operate our apps, under confidentiality obligations.
+              </li>
+              <li>
+                ScamShield AI does not share message text with any third-party AI service or external
+                processing provider.
               </li>
               <li>We may disclose information if required by law.</li>
             </ul>
@@ -218,7 +252,11 @@ export default function PrivacyPolicy({
             <ul className="pp-ul">
               <li>
                 Uploaded files are automatically deleted within ~{retentionHours} hour
-                {retentionHours === 1 ? "" : "s"} after processing.
+                {retentionHours === 1 ? "" : "s"} after processing (where uploads are used).
+              </li>
+              <li>
+                ScamShield AI: pasted message text is processed locally. Optional scan history is
+                stored on-device and can be deleted by clearing History.
               </li>
               <li>Diagnostic logs are retained only as long as needed for operations and security.</li>
             </ul>
@@ -228,12 +266,12 @@ export default function PrivacyPolicy({
               <li>We use HTTPS for secure transfers where supported.</li>
               <li>Access to systems is restricted to authorized personnel.</li>
               <li>
-                No method of transmission or storage is 100% secure, but we use industry-standard
-                safeguards.
+                No method of transmission or storage is 100 percent secure, but we use
+                industry-standard safeguards.
               </li>
             </ul>
 
-            <h2>Children’s Privacy</h2>
+            <h2>Children's Privacy</h2>
             <p>
               Our apps are not directed to children under 13 (or under 16 in the EU). If we learn
               that such data has been provided, we will delete it promptly.
@@ -277,7 +315,7 @@ export default function PrivacyPolicy({
             <h2>Changes to This Policy</h2>
             <p>
               We may update this Policy from time to time. Material changes will be reflected by
-              updating the “Last updated” date above.
+              updating the "Last updated" date above.
             </p>
 
             <h2>Contact Us</h2>
@@ -296,7 +334,7 @@ export default function PrivacyPolicy({
               </li>
               <li>
                 Data deletion request: Send us an email with your app name and a brief description
-                of your request, and we’ll assist you.
+                of your request, and we'll assist you.
               </li>
             </ul>
           </div>

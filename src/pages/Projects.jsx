@@ -1,5 +1,5 @@
 import React from "react";
-import { FaBook, FaFilePdf, FaQrcode, FaIdCard, FaImage, FaFileWord } from "react-icons/fa";
+import { FaBook, FaFilePdf, FaQrcode, FaIdCard, FaImage, FaFileWord, FaShieldAlt } from "react-icons/fa";
 import "./Projects.css";
 
 export default function Projects() {
@@ -46,6 +46,12 @@ export default function Projects() {
       desc: "Easily convert PDFs to DOCX and DOCX back to PDF.",
       icon: <FaFileWord className="icon" />,
     },
+    {
+  name: "ScamShield AI",
+  link: "https://apps.apple.com/us/app/scamshield-ai/id6759913640",
+  desc: "Offline SMS scam detector that analyzes suspicious messages instantly.",
+  icon: <FaShieldAlt className="icon" />,
+},
   ];
 
   return (
