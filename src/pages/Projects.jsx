@@ -1,9 +1,25 @@
 import React from "react";
-import { FaBook, FaFilePdf, FaQrcode, FaIdCard, FaImage, FaFileWord, FaShieldAlt } from "react-icons/fa";
+import {
+  FaBook,
+  FaFilePdf,
+  FaQrcode,
+  FaIdCard,
+  FaImage,
+  FaFileWord,
+  FaShieldAlt,
+  FaVideo,
+} from "react-icons/fa";
 import "./Projects.css";
 
 export default function Projects() {
   const apps = [
+      {
+    name: "Vireel AI Video Maker",
+    link: "/vireel",
+    desc: "Create stunning AI-generated videos from text and images with powerful AI video generation.",
+    icon: <FaVideo className="icon" />,
+  },
+   
     {
       name: "StudyBridge F1 Visa Guide",
       link: "https://studybridge.io",
@@ -66,7 +82,6 @@ export default function Projects() {
           <a
             key={idx}
             href={app.link}
-            target="_blank"
             rel="noopener noreferrer"
             className="project-card"
           >
@@ -80,3 +95,4 @@ export default function Projects() {
     </div>
   );
 }
+

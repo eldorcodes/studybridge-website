@@ -1,87 +1,480 @@
+
+/* =========================================
+   Projects Page
+   ========================================= */
+
 .projects-page {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 50px 20px;
-    text-align: center;
-    font-family: "Arial", sans-serif;
-    color: #333;
+  min-height: 100vh;
+  padding: 90px 24px 100px;
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(99, 102, 241, 0.12),
+      transparent 38%
+    ),
+    linear-gradient(
+      180deg,
+      #f8fafc 0%,
+      #ffffff 45%,
+      #f8fafc 100%
+    );
+
+  color: #111827;
+}
+
+/* =========================================
+   Header
+   ========================================= */
+
+.projects-header {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.projects-title {
+  margin: 0;
+
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+
+  color: #111827;
+}
+
+.projects-title::after {
+  content: "";
+
+  display: block;
+
+  width: 56px;
+  height: 5px;
+
+  margin: 22px auto 20px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    #6366f1,
+    #8b5cf6
+  );
+}
+
+.projects-subtitle {
+  max-width: 680px;
+
+  margin: 0 auto;
+
+  color: #64748b;
+
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+/* =========================================
+   Projects Grid
+   ========================================= */
+
+.projects-container {
+  width: min(1180px, 100%);
+
+  margin: 60px auto 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+/* =========================================
+   Project Card
+   ========================================= */
+
+.project-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 285px;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  text-decoration: none;
+
+  color: inherit;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.05),
+    0 2px 8px rgba(15, 23, 42, 0.03);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Top accent line */
+
+.project-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 3px;
+
+  opacity: 0;
+
+  background: linear-gradient(
+    90deg,
+    #6366f1,
+    #8b5cf6
+  );
+
+  transition: opacity 0.3s ease;
+}
+
+/* Decorative circle */
+
+.project-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 190px;
+  height: 190px;
+
+  top: -110px;
+  right: -110px;
+
+  border-radius: 50%;
+
+  background: rgba(99, 102, 241, 0.06);
+
+  pointer-events: none;
+
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(99, 102, 241, 0.28);
+
+  box-shadow:
+    0 24px 50px rgba(15, 23, 42, 0.10),
+    0 6px 18px rgba(99, 102, 241, 0.08);
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card:hover::after {
+  transform: scale(1.35);
+}
+
+/* =========================================
+   Featured Vireel Card
+   ========================================= */
+
+.featured-project {
+  grid-column: span 2;
+
+  min-height: 320px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(139, 92, 246, 0.16),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f8f7ff 100%
+    );
+
+  border-color: rgba(99, 102, 241, 0.25);
+
+  box-shadow:
+    0 18px 45px rgba(99, 102, 241, 0.10),
+    0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.featured-project::before {
+  opacity: 1;
+  height: 4px;
+}
+
+/* =========================================
+   Icon
+   ========================================= */
+
+.icon-wrapper {
+  position: relative;
+  z-index: 1;
+
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 24px;
+
+  flex-shrink: 0;
+
+  border-radius: 18px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.12),
+    rgba(139, 92, 246, 0.08)
+  );
+
+  border: 1px solid rgba(99, 102, 241, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.project-card:hover .icon-wrapper {
+  transform: scale(1.08) rotate(-2deg);
+
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.18),
+    rgba(139, 92, 246, 0.14)
+  );
+}
+
+.icon {
+  font-size: 28px;
+
+  color: #6366f1;
+}
+
+/* Featured icon */
+
+.featured-project .icon-wrapper {
+  width: 72px;
+  height: 72px;
+
+  border-radius: 20px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.18),
+    rgba(139, 92, 246, 0.14)
+  );
+}
+
+.featured-project .icon {
+  font-size: 32px;
+}
+
+/* =========================================
+   Content
+   ========================================= */
+
+.project-content {
+  position: relative;
+  z-index: 1;
+}
+
+.project-card h2 {
+  margin: 0 0 12px;
+
+  font-size: 1.3rem;
+  font-weight: 750;
+  line-height: 1.3;
+
+  letter-spacing: -0.025em;
+
+  color: #111827;
+}
+
+.featured-project h2 {
+  font-size: 1.6rem;
+}
+
+.project-card p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+
+/* =========================================
+   View App
+   ========================================= */
+
+.project-link {
+  position: relative;
+  z-index: 1;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: auto;
+  padding-top: 25px;
+
+  color: #6366f1;
+
+  font-size: 0.92rem;
+  font-weight: 700;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.project-link span {
+  font-size: 1.1rem;
+
+  transition: transform 0.25s ease;
+}
+
+.project-card:hover .project-link {
+  color: #4f46e5;
+
+  transform: translateX(3px);
+}
+
+.project-card:hover .project-link span {
+  transform: translateX(3px);
+}
+
+/* =========================================
+   Focus Accessibility
+   ========================================= */
+
+.project-card:focus-visible {
+  outline: 3px solid rgba(99, 102, 241, 0.35);
+
+  outline-offset: 4px;
+}
+
+/* =========================================
+   Tablet
+   ========================================= */
+
+@media (max-width: 900px) {
+  .projects-page {
+    padding: 75px 20px 80px;
   }
-  
-  .projects-title {
-    font-size: 2.2rem;
-    margin-bottom: 12px;
-    color: #222;
-  }
-  
-  .projects-subtitle {
-    color: #666;
-    margin-bottom: 40px;
-    font-size: 1rem;
-  }
-  
+
   .projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+
+    margin-top: 48px;
   }
-  
-  /* Card */
-  .project-card {
-    background: #fff;
+
+  .featured-project {
+    grid-column: span 2;
+  }
+}
+
+/* =========================================
+   Mobile
+   ========================================= */
+
+@media (max-width: 600px) {
+  .projects-page {
+    padding: 60px 16px 70px;
+  }
+
+  .projects-title {
+    font-size: 2.35rem;
+  }
+
+  .projects-subtitle {
+    font-size: 0.98rem;
+
+    line-height: 1.6;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+
+    margin-top: 40px;
+  }
+
+  .project-card,
+  .featured-project {
+    grid-column: span 1;
+
+    min-height: 270px;
+
     padding: 25px;
-    border-radius: 14px;
-    text-align: left;
-    text-decoration: none;
-    color: inherit;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+
+    border-radius: 20px;
   }
-  
-  .project-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+
+  .featured-project {
+    min-height: 290px;
   }
-  
+
+  .project-card h2,
+  .featured-project h2 {
+    font-size: 1.25rem;
+  }
+
   .icon-wrapper {
-    background: #f5faff;
-    border-radius: 50%;
-    padding: 15px;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
+    width: 58px;
+    height: 58px;
+
+    border-radius: 16px;
+
+    margin-bottom: 20px;
   }
-  
-  .icon {
-    font-size: 1.8rem;
-    color: #1e88e5;
+
+  .featured-project .icon-wrapper {
+    width: 64px;
+    height: 64px;
   }
-  
-  .project-card h2 {
-    font-size: 1.2rem;
-    color: #1e88e5;
-    margin-bottom: 10px;
+}
+
+/* =========================================
+   Reduced Motion
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .icon-wrapper,
+  .project-link,
+  .project-link span,
+  .project-card::after {
+    transition: none;
   }
-  
-  .project-card p {
-    font-size: 0.95rem;
-    color: #444;
-    margin-bottom: 15px;
-  }
-  
-  .project-link {
-    margin-top: auto;
-    font-weight: 600;
-    color: #1e88e5;
-    font-size: 0.95rem;
-    transition: color 0.3s;
-  }
-  
-  .project-link:hover {
-    color: #1669bb;
-  }
+}

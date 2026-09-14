@@ -10,6 +10,7 @@ import Payment from "./pages/Payment";
 import Privacy from "./pages/Privacy";   // ✅ Import Privacy
 import Terms from "./pages/Terms";       // ✅ Import Terms
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Vireel from "./pages/Vireel";
 
 function Footer() {
   return (
@@ -52,6 +53,7 @@ function App() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/projects" element={<Projects />} />
+         <Route path="/vireel" element={<Vireel />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />  
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />   {/* ✅ Privacy route */}

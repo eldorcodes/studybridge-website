@@ -1,0 +1,956 @@
+.vireel-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+.vireel-hero {
+  position: relative;
+  min-height: 680px;
+  padding: 100px 7%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+  align-items: center;
+  gap: 70px;
+  background:
+    radial-gradient(circle at 75% 45%, rgba(96, 165, 250, 0.25), transparent 28%),
+    radial-gradient(circle at 20% 10%, rgba(129, 140, 248, 0.2), transparent 25%),
+    linear-gradient(135deg, #020617 0%, #0f172a 48%, #172554 100%);
+  color: #ffffff;
+}
+
+.vireel-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.vireel-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 14px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(147, 197, 253, 0.25);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #bfdbfe;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.vireel-hero h1 {
+  margin: 0;
+  max-width: 760px;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+  font-weight: 900;
+}
+
+.vireel-hero h1 span {
+  display: block;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa, #c4b5fd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.vireel-hero-description {
+  max-width: 650px;
+  margin: 28px 0 34px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.vireel-download-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.store-button {
+  min-width: 185px;
+  min-height: 58px;
+  padding: 9px 17px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 13px;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.store-button:hover {
+  transform: translateY(-3px);
+}
+
+.apple-button {
+  background: #ffffff;
+  color: #050505;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+}
+
+.apple-button:hover {
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.28);
+}
+
+.google-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.google-button:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.store-button-icon {
+  width: 29px;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.google-play-icon {
+  width: 29px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.store-button-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.store-button-text small {
+  font-size: 0.62rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.store-button-text strong {
+  font-size: 1.15rem;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.vireel-platform-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.83rem;
+}
+
+.vireel-platform-note svg {
+  color: #60a5fa;
+}
+
+.vireel-hero-visual {
+  position: relative;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.vireel-phone {
+  position: relative;
+  width: 285px;
+  height: 555px;
+  padding: 9px;
+  box-sizing: border-box;
+  border: 4px solid #334155;
+  border-radius: 42px;
+  background: #020617;
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.45),
+    0 0 80px rgba(96, 165, 250, 0.14);
+  transform: rotate(3deg);
+}
+
+.phone-top {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 100px;
+  height: 25px;
+  transform: translateX(-50%);
+  border-radius: 0 0 18px 18px;
+  background: #020617;
+  z-index: 5;
+}
+
+.phone-top span {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 34px;
+  height: 4px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #1e293b;
+}
+
+.phone-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 65px 18px 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 31px;
+  background:
+    radial-gradient(circle at 50% 15%, rgba(99, 102, 241, 0.35), transparent 28%),
+    linear-gradient(160deg, #111827, #172554 55%, #0f172a);
+  text-align: center;
+}
+
+.phone-screen-glow {
+  position: absolute;
+  top: 95px;
+  left: 50%;
+  width: 190px;
+  height: 190px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(96, 165, 250, 0.14);
+  filter: blur(35px);
+}
+
+.phone-logo {
+  position: relative;
+  z-index: 1;
+  width: 55px;
+  height: 55px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.35);
+  font-size: 1.5rem;
+}
+
+.phone-screen h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 1.55rem;
+  letter-spacing: -0.04em;
+}
+
+.phone-screen > p {
+  position: relative;
+  z-index: 1;
+  margin: 5px 0 25px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.78rem;
+}
+
+.phone-video-preview {
+  position: relative;
+  z-index: 1;
+  height: 220px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 35% 35%, rgba(244, 114, 182, 0.5), transparent 20%),
+    radial-gradient(circle at 70% 65%, rgba(59, 130, 246, 0.6), transparent 25%),
+    linear-gradient(135deg, #312e81, #1e1b4b, #0f172a);
+}
+
+.preview-play {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #1e3a8a;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.preview-play svg {
+  margin-left: 3px;
+}
+
+.phone-generate-button {
+  position: relative;
+  z-index: 1;
+  margin-top: 16px;
+  padding: 13px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  font-size: 0.85rem;
+  font-weight: 800;
+  box-shadow: 0 12px 25px rgba(59, 130, 246, 0.25);
+}
+
+.phone-bottom {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  width: 90px;
+  height: 5px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #334155;
+  z-index: 5;
+}
+
+.floating-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 15px;
+  background: rgba(15, 23, 42, 0.78);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(16px);
+  z-index: 4;
+}
+
+.floating-card svg {
+  color: #60a5fa;
+}
+
+.floating-card div {
+  display: flex;
+  flex-direction: column;
+}
+
+.floating-card strong {
+  font-size: 0.78rem;
+}
+
+.floating-card span {
+  margin-top: 3px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.68rem;
+}
+
+.floating-card-top {
+  top: 90px;
+  right: 4%;
+}
+
+.floating-card-bottom {
+  bottom: 85px;
+  left: 2%;
+}
+
+.vireel-hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.vireel-glow-one {
+  width: 250px;
+  height: 250px;
+  top: -80px;
+  right: 25%;
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.vireel-glow-two {
+  width: 220px;
+  height: 220px;
+  bottom: -80px;
+  left: 20%;
+  background: rgba(139, 92, 246, 0.08);
+}
+
+.vireel-intro {
+  padding: 110px 7% 65px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.vireel-section-heading {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.vireel-section-heading > span,
+.vireel-how-heading > span,
+.vireel-capabilities-text > span,
+.vireel-cta-content > span {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #2563eb;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.vireel-section-heading h2,
+.vireel-how-heading h2,
+.vireel-capabilities-text h2,
+.vireel-cta h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: clamp(2.1rem, 4vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+}
+
+.vireel-section-heading p {
+  max-width: 650px;
+  margin: 22px auto 0;
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.vireel-features {
+  padding: 25px 7% 110px;
+  background: #ffffff;
+}
+
+.vireel-features-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.vireel-feature-card {
+  padding: 30px 25px;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.06);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.vireel-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.1);
+}
+
+.vireel-feature-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 1.15rem;
+}
+
+.vireel-feature-card h3 {
+  margin: 0 0 10px;
+  color: #0f172a;
+  font-size: 1.05rem;
+}
+
+.vireel-feature-card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.vireel-how {
+  padding: 110px 7%;
+  background: #f8fafc;
+}
+
+.vireel-how-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 90px;
+  align-items: center;
+}
+
+.vireel-how-heading h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.vireel-how-heading p {
+  margin: 22px 0 0;
+  color: #64748b;
+  line-height: 1.8;
+}
+
+.vireel-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.vireel-step {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 18px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.vireel-step:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.vireel-step-number {
+  color: #2563eb;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.vireel-step h3 {
+  margin: 0 0 7px;
+  font-size: 1.08rem;
+}
+
+.vireel-step p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.vireel-capabilities {
+  padding: 120px 7%;
+  background: #ffffff;
+}
+
+.vireel-capabilities-container {
+  max-width: 1150px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  align-items: center;
+}
+
+.vireel-capabilities-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.capability-window {
+  width: min(100%, 480px);
+  overflow: hidden;
+  border: 1px solid #1e293b;
+  border-radius: 25px;
+  background: #020617;
+  box-shadow: 0 30px 70px rgba(15, 23, 42, 0.2);
+}
+
+.capability-window-header {
+  height: 42px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.capability-window-header span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #475569;
+}
+
+.capability-window-content {
+  min-height: 370px;
+  padding: 55px 42px 42px;
+  box-sizing: border-box;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.3), transparent 30%),
+    linear-gradient(145deg, #0f172a, #172554);
+}
+
+.capability-icon {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: #ffffff;
+}
+
+.capability-window-content h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+}
+
+.capability-window-content h3:nth-of-type(3) {
+  color: #60a5fa;
+}
+
+.capability-prompt {
+  margin-top: 35px;
+  padding: 13px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+}
+
+.capability-prompt svg {
+  color: #60a5fa;
+}
+
+.vireel-capabilities-text h2 {
+  max-width: 600px;
+}
+
+.vireel-capabilities-text > p {
+  max-width: 580px;
+  margin: 24px 0;
+  color: #64748b;
+  line-height: 1.8;
+}
+
+.vireel-capabilities-text ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  list-style: none;
+}
+
+.vireel-capabilities-text li {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: #334155;
+  font-size: 0.92rem;
+}
+
+.vireel-capabilities-text li svg {
+  color: #2563eb;
+  font-size: 0.8rem;
+}
+
+.vireel-cta {
+  padding: 110px 7%;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(96, 165, 250, 0.22), transparent 35%),
+    linear-gradient(135deg, #020617, #172554);
+  color: #ffffff;
+  text-align: center;
+}
+
+.vireel-cta-content {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.vireel-cta-icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 17px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.3);
+}
+
+.vireel-cta-content > span {
+  color: #93c5fd;
+}
+
+.vireel-cta h2 {
+  color: #ffffff;
+}
+
+.vireel-cta p {
+  max-width: 620px;
+  margin: 22px auto 30px;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.8;
+}
+
+.vireel-cta-buttons {
+  justify-content: center;
+}
+
+.back-projects {
+  margin-top: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.back-projects:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 1050px) {
+  .vireel-hero {
+    grid-template-columns: 1fr 0.8fr;
+    gap: 30px;
+  }
+
+  .vireel-phone {
+    width: 250px;
+    height: 490px;
+  }
+
+  .phone-video-preview {
+    height: 185px;
+  }
+
+  .floating-card-top {
+    right: -2%;
+  }
+
+  .floating-card-bottom {
+    left: -5%;
+  }
+
+  .vireel-features-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .vireel-hero {
+    min-height: auto;
+    padding: 85px 6% 100px;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .vireel-hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .vireel-badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .vireel-hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .vireel-download-buttons {
+    justify-content: center;
+  }
+
+  .vireel-platform-note {
+    justify-content: center;
+  }
+
+  .vireel-hero-visual {
+    min-height: 550px;
+    margin-top: 15px;
+  }
+
+  .vireel-how-content,
+  .vireel-capabilities-container {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .vireel-how-heading {
+    text-align: center;
+  }
+
+  .vireel-how-heading p {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .vireel-capabilities-text {
+    text-align: center;
+  }
+
+  .vireel-capabilities-text > p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .vireel-capabilities-text ul {
+    width: fit-content;
+    margin: 0 auto;
+    text-align: left;
+  }
+}
+
+@media (max-width: 560px) {
+  .vireel-hero {
+    padding: 65px 20px 80px;
+  }
+
+  .vireel-hero h1 {
+    font-size: 3rem;
+  }
+
+  .vireel-hero-description {
+    font-size: 0.95rem;
+  }
+
+  .vireel-download-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .store-button {
+    width: min(100%, 270px);
+    justify-content: center;
+  }
+
+  .vireel-hero-visual {
+    min-height: 510px;
+  }
+
+  .vireel-phone {
+    width: 230px;
+    height: 455px;
+  }
+
+  .phone-screen {
+    padding-top: 55px;
+  }
+
+  .phone-video-preview {
+    height: 165px;
+  }
+
+  .floating-card {
+    padding: 11px 12px;
+  }
+
+  .floating-card-top {
+    top: 70px;
+    right: 0;
+  }
+
+  .floating-card-bottom {
+    bottom: 55px;
+    left: 0;
+  }
+
+  .vireel-intro,
+  .vireel-features,
+  .vireel-how,
+  .vireel-capabilities,
+  .vireel-cta {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .vireel-intro {
+    padding-top: 75px;
+  }
+
+  .vireel-features {
+    padding-bottom: 75px;
+  }
+
+  .vireel-features-container {
+    grid-template-columns: 1fr;
+  }
+
+  .vireel-how,
+  .vireel-capabilities,
+  .vireel-cta {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .capability-window-content {
+    min-height: 330px;
+    padding: 45px 28px 30px;
+  }
+
+  .vireel-capabilities-text ul {
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .vireel-hero h1 {
+    font-size: 2.55rem;
+  }
+
+  .vireel-phone {
+    width: 210px;
+    height: 420px;
+  }
+
+  .phone-video-preview {
+    height: 145px;
+  }
+
+  .floating-card {
+    transform: scale(0.9);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .store-button,
+  .vireel-feature-card,
+  .back-projects {
+    transition: none;
+  }
+
+  .store-button:hover,
+  .vireel-feature-card:hover {
+    transform: none;
+  }
+}

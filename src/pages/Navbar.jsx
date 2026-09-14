@@ -5,60 +5,68 @@ import "./Navbar.css";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Logo */}
         <div className="logo">
-          <NavLink to="/" onClick={() => setIsOpen(false)}>
+          <NavLink to="/" onClick={closeMenu}>
             StudyBridge <span>LLC</span>
           </NavLink>
         </div>
 
-        {/* Desktop & Mobile Links */}
         <div className={`links ${isOpen ? "open" : ""}`}>
           <NavLink
             to="/"
             className={({ isActive }) => (isActive ? "active" : "")}
-            onClick={() => setIsOpen(false)}
+            onClick={closeMenu}
+            end
           >
             Home
           </NavLink>
+
           <NavLink
             to="/projects"
             className={({ isActive }) => (isActive ? "active" : "")}
-            onClick={() => setIsOpen(false)}
+            onClick={closeMenu}
           >
             Projects
           </NavLink>
+
           <NavLink
             to="/pricing"
             className={({ isActive }) => (isActive ? "active" : "")}
-            onClick={() => setIsOpen(false)}
+            onClick={closeMenu}
           >
             Pricing
           </NavLink>
+
           <NavLink
             to="/payment"
             className={({ isActive }) => (isActive ? "active" : "")}
-            onClick={() => setIsOpen(false)}
+            onClick={closeMenu}
           >
             Make a payment
           </NavLink>
+
           <NavLink
             to="/contact"
             className={({ isActive }) => (isActive ? "active" : "")}
-            onClick={() => setIsOpen(false)}
+            onClick={closeMenu}
           >
             Contact
           </NavLink>
         </div>
 
-        {/* Hamburger Button */}
         <button
+          type="button"
           className={`hamburger ${isOpen ? "active" : ""}`}
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle navigation"
+          onClick={() => setIsOpen((previous) => !previous)}
+          aria-label={isOpen ? "Close navigation" : "Open navigation"}
+          aria-expanded={isOpen}
         >
           <span></span>
           <span></span>
