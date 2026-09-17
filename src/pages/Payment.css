@@ -1,61 +1,938 @@
+/* =========================================
+   STUDYBRIDGE — PAYMENT PAGE
+   Matches Header / Pricing / Footer
+========================================= */
+
 .payment-page {
-  display: flex;
-  flex-direction: column;
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --blue: #2563eb;
+
+  --text: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  --border: #e2e8f0;
+  --border-light: #edf2f7;
+
+  min-height: 100vh;
+
+  padding: 88px 24px 100px;
+
+  box-sizing: border-box;
+
+  color: var(--text);
+
+  background:
+    radial-gradient(
+      circle at 8% 4%,
+      rgba(99, 102, 241, 0.10),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 92% 10%,
+      rgba(59, 130, 246, 0.09),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #f8fafc 0%,
+      #ffffff 48%,
+      #f8fafc 100%
+    );
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.payment-header {
+  width: min(760px, 100%);
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.payment-eyebrow {
+  display: inline-flex;
+
   align-items: center;
   justify-content: center;
-  padding: 50px 20px;
-  background: #f9fafc;
-  min-height: 100vh;
-  text-align: center;
+
+  padding: 7px 13px;
+
+  border: 1px solid rgba(99, 102, 241, 0.14);
+
+  border-radius: 999px;
+
+  color: #4338ca;
+
+  background: rgba(99, 102, 241, 0.08);
+
+  font-size: 0.68rem;
+
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: 0.11em;
 }
 
-.payment-page h1 {
+.payment-header h1 {
+  margin: 20px 0 0;
+
+  color: #0f172a;
+
+  font-size: clamp(2.45rem, 5vw, 4rem);
+
+  line-height: 1.05;
+
+  font-weight: 850;
+
+  letter-spacing: -0.055em;
+}
+
+.payment-header > p {
+  max-width: 700px;
+
+  margin: 21px auto 0;
+
+  color: #64748b;
+
+  font-size: 1.03rem;
+
+  line-height: 1.75;
+}
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.payment-layout {
+  width: min(1080px, 100%);
+
+  margin: 62px auto 0;
+
+  display: grid;
+
+  grid-template-columns: 0.9fr 1.1fr;
+
+  gap: 22px;
+
+  align-items: stretch;
+}
+
+/* =========================================
+   LEFT INFORMATION CARD
+========================================= */
+
+.payment-info {
+  position: relative;
+
+  min-height: 520px;
+
+  padding: 42px 38px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 27px;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(129, 140, 248, 0.22),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 0% 100%,
+      rgba(59, 130, 246, 0.13),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      #0f172a 0%,
+      #172554 52%,
+      #1e3a8a 100%
+    );
+
+  box-shadow:
+    0 22px 55px rgba(15, 23, 42, 0.14),
+    0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+/* Decorative circle */
+
+.payment-info::before {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  top: -185px;
+  right: -110px;
+
+  border-radius: 50%;
+
+  background: rgba(129, 140, 248, 0.12);
+}
+
+/* Decorative bottom circle */
+
+.payment-info::after {
+  content: "";
+
+  position: absolute;
+
+  width: 210px;
+  height: 210px;
+
+  bottom: -145px;
+  left: -80px;
+
+  border-radius: 50%;
+
+  background: rgba(96, 165, 250, 0.10);
+}
+
+/* =========================================
+   INFO ICON
+========================================= */
+
+.payment-info-icon {
+  position: relative;
+
+  z-index: 1;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 28px;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  border-radius: 17px;
+
+  color: #bfdbfe;
+
+  background: rgba(255, 255, 255, 0.09);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  font-size: 1.55rem;
+}
+
+/* =========================================
+   INFO TEXT
+========================================= */
+
+.payment-info h2 {
+  position: relative;
+
+  z-index: 1;
+
+  margin: 0;
+
+  color: #ffffff;
+
   font-size: 2rem;
-  color: #222;
-  margin-bottom: 10px;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  letter-spacing: -0.04em;
 }
 
-.payment-page p {
-  color: #555;
-  max-width: 600px;
-  margin-bottom: 30px;
+.payment-info > p {
+  position: relative;
+
+  z-index: 1;
+
+  margin: 17px 0 0;
+
+  color: rgba(255, 255, 255, 0.70);
+
+  font-size: 0.94rem;
+
+  line-height: 1.75;
 }
+
+/* =========================================
+   BENEFITS
+========================================= */
+
+.payment-benefits {
+  position: relative;
+
+  z-index: 1;
+
+  margin-top: 32px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.payment-benefit {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+}
+
+.payment-benefit > span {
+  flex-shrink: 0;
+
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 1px;
+
+  border-radius: 50%;
+
+  color: #bfdbfe;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  font-size: 0.7rem;
+
+  font-weight: 800;
+}
+
+.payment-benefit p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.79);
+
+  font-size: 0.87rem;
+
+  line-height: 1.5;
+}
+
+/* =========================================
+   PAYMENT BOX
+========================================= */
 
 .payment-box {
-  background: #fff;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 100%;
-  max-width: 400px;
+  padding: 38px;
+
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 27px;
+
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.07),
+    0 3px 10px rgba(15, 23, 42, 0.025);
 }
 
-.payment-box input {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-  text-align: center;
+/* =========================================
+   PAYMENT BOX HEADER
+========================================= */
+
+.payment-box-header {
+  margin-bottom: 24px;
 }
 
-.payment-box button {
-  padding: 12px;
-  font-size: 16px;
-  background-color: #635bff;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
+.payment-box-label {
+  color: #6366f1;
+
+  font-size: 0.67rem;
+
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: 0.11em;
+}
+
+.payment-box-header h2 {
+  margin: 8px 0 0;
+
+  color: #111827;
+
+  font-size: 1.72rem;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  letter-spacing: -0.04em;
+}
+
+.payment-box-header p {
+  margin: 9px 0 0;
+
+  color: #64748b;
+
+  font-size: 0.88rem;
+
+  line-height: 1.6;
+}
+
+/* =========================================
+   AMOUNT PRESETS
+========================================= */
+
+.amount-presets {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 9px;
+
+  margin-bottom: 14px;
+}
+
+.amount-presets button {
+  min-height: 44px;
+
+  padding: 0 10px;
+
+  border: 1px solid #dbe3ec;
+
+  border-radius: 11px;
+
+  color: #475569;
+
+  background: #f8fafc;
+
+  font-size: 0.86rem;
+
+  font-weight: 700;
+
   cursor: pointer;
-  transition: background 0.3s;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.payment-box button:hover {
-  background-color: #5046d3;
+.amount-presets button:hover {
+  transform: translateY(-1px);
+
+  color: #4f46e5;
+
+  background: #f5f3ff;
+
+  border-color: rgba(99, 102, 241, 0.30);
+
+  box-shadow:
+    0 4px 12px rgba(79, 70, 229, 0.07);
+}
+
+.amount-presets button.selected {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4f46e5
+    );
+
+  border-color: transparent;
+
+  box-shadow:
+    0 6px 16px rgba(79, 70, 229, 0.20);
+}
+
+/* =========================================
+   AMOUNT INPUT
+========================================= */
+
+.amount-input-wrapper {
+  display: flex;
+
+  align-items: center;
+
+  min-height: 58px;
+
+  padding: 0 15px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 13px;
+
+  background: #ffffff;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.amount-input-wrapper:focus-within {
+  border-color: #6366f1;
+
+  box-shadow:
+    0 0 0 4px rgba(99, 102, 241, 0.10);
+}
+
+.amount-input-wrapper > span {
+  margin-right: 8px;
+
+  color: #475569;
+
+  font-size: 1.12rem;
+
+  font-weight: 750;
+}
+
+.amount-input-wrapper input {
+  width: 100%;
+
+  min-width: 0;
+
+  padding: 0;
+
+  border: 0;
+
+  outline: 0;
+
+  background: transparent;
+
+  color: #111827;
+
+  font-size: 1rem;
+
+  font-weight: 650;
+}
+
+.amount-input-wrapper input::placeholder {
+  color: #94a3b8;
+}
+
+.amount-input-wrapper input::-webkit-outer-spin-button,
+.amount-input-wrapper input::-webkit-inner-spin-button {
+  margin: 0;
+
+  -webkit-appearance: none;
+}
+
+.amount-input-wrapper input[type="number"] {
+  appearance: textfield;
+
+  -moz-appearance: textfield;
+}
+
+.amount-input-wrapper small {
+  flex-shrink: 0;
+
+  color: #94a3b8;
+
+  font-size: 0.69rem;
+
+  font-weight: 750;
+
+  letter-spacing: 0.06em;
+}
+
+/* =========================================
+   STRIPE BUTTON
+========================================= */
+
+.stripe-button {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 52px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  margin-top: 14px;
+
+  padding: 0 18px;
+
+  box-sizing: border-box;
+
+  border: 0;
+
+  border-radius: 13px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb 0%,
+      #4f46e5 55%,
+      #6366f1 100%
+    );
+
+  font-size: 0.91rem;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 9px 22px rgba(79, 70, 229, 0.21);
+
+  transition:
+    transform 0.23s ease,
+    box-shadow 0.23s ease,
+    filter 0.23s ease;
+}
+
+.stripe-button:hover {
+  transform: translateY(-2px);
+
+  filter: brightness(1.03);
+
+  box-shadow:
+    0 13px 29px rgba(79, 70, 229, 0.28);
+}
+
+.stripe-button:active {
+  transform: translateY(0);
+}
+
+.stripe-icon {
+  font-size: 0.75rem;
+}
+
+.button-arrow {
+  margin-left: auto;
+
+  font-size: 1.08rem;
+
+  transition: transform 0.2s ease;
+}
+
+.stripe-button:hover .button-arrow {
+  transform: translateX(3px);
+}
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.payment-divider {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin: 24px 0;
+
+  color: #94a3b8;
+
+  font-size: 0.66rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.09em;
+}
+
+.payment-divider::before,
+.payment-divider::after {
+  content: "";
+
+  flex: 1;
+
+  height: 1px;
+
+  background: #e2e8f0;
+}
+
+/* =========================================
+   PAYPAL
+========================================= */
+
+.paypal-section {
+  width: 100%;
+}
+
+.paypal-label {
+  margin: 0 0 10px;
+
+  color: #64748b;
+
+  text-align: center;
+
+  font-size: 0.76rem;
+
+  font-weight: 600;
 }
 
 .paypal-button-container {
-  margin-top: 10px;
+  width: 100%;
+
+  min-height: 48px;
+}
+
+.paypal-placeholder {
+  min-height: 48px;
+
+  padding: 10px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 2px;
+
+  border: 1px dashed #cbd5e1;
+
+  border-radius: 11px;
+
+  background: #f8fafc;
+
+  color: #64748b;
+
+  text-align: center;
+
+  font-size: 0.78rem;
+
+  font-weight: 600;
+}
+
+.paypal-placeholder small {
+  color: #94a3b8;
+
+  font-size: 0.69rem;
+
+  font-weight: 500;
+}
+
+/* =========================================
+   SECURITY NOTE
+========================================= */
+
+.secure-note {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 21px;
+
+  padding-top: 17px;
+
+  border-top: 1px solid #eef2f7;
+}
+
+.secure-note span {
+  font-size: 0.76rem;
+}
+
+.secure-note p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 0.7rem;
+
+  line-height: 1.5;
+}
+
+/* =========================================
+   FOCUS STATES
+========================================= */
+
+.stripe-button:focus-visible,
+.amount-presets button:focus-visible,
+.amount-input-wrapper input:focus-visible {
+  outline: 3px solid rgba(99, 102, 241, 0.25);
+
+  outline-offset: 3px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .payment-page {
+    padding: 75px 22px 90px;
+  }
+
+  .payment-layout {
+    max-width: 680px;
+
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .payment-info {
+    min-height: auto;
+
+    padding: 38px 34px;
+  }
+
+  .payment-box {
+    padding: 34px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .payment-page {
+    padding: 62px 16px 75px;
+  }
+
+  .payment-header h1 {
+    font-size: 2.45rem;
+  }
+
+  .payment-header > p {
+    font-size: 0.94rem;
+
+    line-height: 1.7;
+  }
+
+  .payment-layout {
+    margin-top: 40px;
+
+    gap: 16px;
+  }
+
+  .payment-info {
+    padding: 32px 25px;
+
+    border-radius: 22px;
+  }
+
+  .payment-info-icon {
+    width: 54px;
+    height: 54px;
+
+    margin-bottom: 24px;
+  }
+
+  .payment-info h2 {
+    font-size: 1.7rem;
+  }
+
+  .payment-info > p {
+    font-size: 0.88rem;
+  }
+
+  .payment-benefits {
+    margin-top: 27px;
+
+    gap: 15px;
+  }
+
+  .payment-benefit p {
+    font-size: 0.83rem;
+  }
+
+  .payment-box {
+    padding: 27px 21px;
+
+    border-radius: 22px;
+  }
+
+  .payment-box-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .amount-presets {
+    gap: 7px;
+  }
+
+  .amount-presets button {
+    min-height: 42px;
+
+    font-size: 0.81rem;
+  }
+
+  .stripe-button {
+    min-height: 50px;
+  }
+}
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+  .payment-page {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .payment-header h1 {
+    font-size: 2.15rem;
+  }
+
+  .payment-info {
+    padding: 28px 21px;
+  }
+
+  .payment-box {
+    padding: 24px 18px;
+  }
+
+  .amount-presets {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .payment-info h2 {
+    font-size: 1.55rem;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .stripe-button,
+  .amount-presets button,
+  .amount-input-wrapper,
+  .button-arrow {
+    transition: none;
+  }
 }
