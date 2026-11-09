@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
@@ -10,7 +10,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" aria-label="Main navigation">
       <div className="navbar-container">
         <div className="logo">
           <NavLink to="/" onClick={closeMenu}>
@@ -18,7 +18,7 @@ export default function Navbar() {
           </NavLink>
         </div>
 
-        <div className={`links ${isOpen ? "open" : ""}`}>
+        <div id="main-navigation" className={`links ${isOpen ? "open" : ""}`}>
           <NavLink
             to="/"
             className={({ isActive }) => (isActive ? "active" : "")}
@@ -67,6 +67,7 @@ export default function Navbar() {
           onClick={() => setIsOpen((previous) => !previous)}
           aria-label={isOpen ? "Close navigation" : "Open navigation"}
           aria-expanded={isOpen}
+          aria-controls="main-navigation"
         >
           <span></span>
           <span></span>

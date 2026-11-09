@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Payment.css";
 
 export default function Payment() {
@@ -41,21 +41,22 @@ document.body.appendChild(script);
 }, []);
 
 useEffect(() => {
+const paypalContainer = paypalRef.current;
 if (
 !scriptLoaded ||
 !window.paypal ||
-!paypalRef.current ||
+!paypalContainer ||
 !amount ||
 Number(amount) <= 0
 ) {
-if (paypalRef.current && (!amount || Number(amount) <= 0)) {
-paypalRef.current.innerHTML = "";
+if (paypalContainer && (!amount || Number(amount) <= 0)) {
+paypalContainer.innerHTML = "";
 }
 
   return;
 }
 
-paypalRef.current.innerHTML = "";
+paypalContainer.innerHTML = "";
 
 window.paypal
   .Buttons({
@@ -105,12 +106,10 @@ window.paypal
       alert("Payment failed. Please try again.");
     },
   })
-  .render(paypalRef.current);
+  .render(paypalContainer);
 
 return () => {
-  if (paypalRef.current) {
-    paypalRef.current.innerHTML = "";
-  }
+  paypalContainer.innerHTML = "";
 };
 
 }, [scriptLoaded, amount]);

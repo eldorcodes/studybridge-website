@@ -49,13 +49,13 @@
   
   .pp-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 16px;
   }
   
   @media (min-width: 880px) {
     .pp-grid {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
   
@@ -95,6 +95,7 @@
   .pp-link {
     color: var(--pp-accent);
     text-decoration: underline;
+    overflow-wrap: anywhere;
   }
   
   .pp-app-list {

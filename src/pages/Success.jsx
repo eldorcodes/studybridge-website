@@ -1,10 +1,11 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Success() {
   return (
-    <div className="flex flex-col items-center mt-20">
-      <h1 className="text-3xl font-bold text-green-600">✅ Payment Successful!</h1>
-      <p className="mt-4">Thanks for subscribing to StudyBridge LLC 🎉</p>
-    </div>
+    <main className="page success">
+      <h1>Payment successful</h1>
+      <p>Thanks for subscribing to StudyBridge LLC.</p>
+      <Link to="/" className="btn">Back to home</Link>
+    </main>
   );
 }

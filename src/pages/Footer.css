@@ -1,263 +1,113 @@
-/* =========================================
-   STUDYBRIDGE — FOOTER
-   Matches Header / Navigation
-========================================= */
-
-.footer {
-  position: relative;
-
-  margin-top: 0;
-  padding: 34px 24px 32px;
-
-  box-sizing: border-box;
-
-  color: #ffffff;
-
+.site-footer {
   background:
-    radial-gradient(
-      circle at 12% 100%,
-      rgba(96, 165, 250, 0.12),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 88% 0%,
-      rgba(129, 140, 248, 0.14),
-      transparent 32%
-    ),
-    linear-gradient(
-      110deg,
-      #0f172a 0%,
-      #172554 48%,
-      #1e3a8a 100%
-    );
-
-  border-top: 1px solid rgba(255, 255, 255, 0.10);
-
-  box-shadow:
-    0 -8px 30px rgba(15, 23, 42, 0.08);
+    radial-gradient(ellipse at 0% 0%, #1e3a65, transparent 55%),
+    #10192d;
+  border-top: 1px solid #33476a;
+  color: #f8fafc;
 }
 
-/* =========================================
-   SUBTLE TOP GLOW
-========================================= */
-
-.footer::before {
-  content: "";
-
-  position: absolute;
-  top: 0;
-  left: 50%;
-
-  width: min(700px, 80%);
-  height: 1px;
-
-  transform: translateX(-50%);
-
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(147, 197, 253, 0.35),
-    transparent
-  );
+.site-footer-inner {
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
 }
 
-/* =========================================
-   CONTAINER
-========================================= */
+.site-footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr) minmax(0, 0.9fr) minmax(0, 1.35fr);
+  gap: clamp(22px, 4vw, 56px);
+  padding-block: clamp(38px, 6vw, 72px);
+}
 
-.footer-container {
-  width: min(1100px, 100%);
-
-  margin: 0 auto;
-
-  display: flex;
+.site-footer-brand {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-
-  gap: 24px;
+  gap: 12px;
+  font-size: 1.2rem;
+  font-weight: 750;
 }
 
-/* =========================================
-   COPYRIGHT
-========================================= */
+.site-footer-brand img {
+  border-radius: 10px;
+}
 
-.footer-container p {
+.site-footer p {
+  max-width: 29ch;
+  margin: 14px 0 0;
+  color: #c0cde2;
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.site-footer h2 {
+  margin: 0 0 8px;
+  color: #b6c8e8;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.site-footer ul {
   margin: 0;
-
-  color: rgba(255, 255, 255, 0.62);
-
-  font-size: 0.78rem;
-  line-height: 1.6;
-  font-weight: 500;
-
-  letter-spacing: -0.005em;
+  padding: 0;
+  list-style: none;
 }
 
-/* =========================================
-   FOOTER LINKS
-========================================= */
-
-.footer-links {
-  display: flex;
-  align-items: center;
-
-  gap: 26px;
-}
-
-.footer-links a {
-  position: relative;
-
-  color: rgba(255, 255, 255, 0.78);
-
+.site-footer a {
+  color: inherit;
   text-decoration: none;
-
-  font-size: 0.78rem;
-  line-height: 1.5;
-  font-weight: 650;
-
-  transition:
-    color 0.2s ease,
-    opacity 0.2s ease;
+  overflow-wrap: anywhere;
 }
 
-/* Underline animation */
-
-.footer-links a::after {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  right: 0;
-  bottom: -5px;
-
-  height: 2px;
-
-  border-radius: 999px;
-
-  background: #93c5fd;
-
-  transform: scaleX(0);
-  transform-origin: center;
-
-  transition: transform 0.2s ease;
+.site-footer li a {
+  display: inline-block;
+  padding-block: 7px;
+  font-size: 0.94rem;
+  line-height: 1.45;
 }
 
-.footer-links a:hover {
-  color: #ffffff;
+.site-footer a:hover,
+.site-footer li a[aria-current="page"] {
+  color: #bfdbfe;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
-.footer-links a:hover::after {
-  transform: scaleX(1);
-}
-
-/* =========================================
-   ACTIVE LINK
-========================================= */
-
-.footer-links a.active {
-  color: #ffffff;
-}
-
-.footer-links a.active::after {
-  transform: scaleX(0.7);
-}
-
-/* =========================================
-   ACCESSIBILITY
-========================================= */
-
-.footer-links a:focus-visible {
-  outline: 2px solid rgba(147, 197, 253, 0.8);
-  outline-offset: 5px;
-
+.site-footer a:focus-visible {
+  outline: 2px solid #bfdbfe;
+  outline-offset: 4px;
   border-radius: 3px;
 }
 
-/* =========================================
-   TABLET
-========================================= */
+.site-footer-bottom {
+  border-top: 1px solid #35445f;
+  padding-block: 20px 24px;
+  color: #b6c8e8;
+}
 
-@media (max-width: 700px) {
-  .footer {
-    padding: 32px 22px 30px;
+@media (max-width: 900px) {
+  .site-footer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .footer-container {
-    flex-direction: column;
-
-    justify-content: center;
-
-    gap: 17px;
-
-    text-align: center;
-  }
-
-  .footer-container p {
-    font-size: 0.75rem;
-  }
-
-  .footer-links {
-    gap: 24px;
+  .site-footer-about {
+    grid-column: 1 / -1;
   }
 }
 
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 600px) {
-  .footer {
-    padding: 30px 18px 28px;
+@media (max-width: 620px) {
+  .site-footer-inner {
+    width: calc(100% - 36px);
   }
 
-  .footer-container {
-    gap: 15px;
+  .site-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .footer-container p {
-    font-size: 0.71rem;
+  .site-footer li a {
+    padding-block: 10px;
   }
 
-  .footer-links {
-    gap: 20px;
-  }
-
-  .footer-links a {
-    font-size: 0.74rem;
-  }
-}
-
-/* =========================================
-   SMALL PHONES
-========================================= */
-
-@media (max-width: 380px) {
-  .footer {
-    padding-left: 14px;
-    padding-right: 14px;
-  }
-
-  .footer-container p {
-    font-size: 0.68rem;
-  }
-
-  .footer-links {
-    gap: 17px;
-  }
-
-  .footer-links a {
-    font-size: 0.71rem;
-  }
-}
-
-/* =========================================
-   REDUCED MOTION
-========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-  .footer-links a,
-  .footer-links a::after {
-    transition: none;
+  .site-footer nav[aria-labelledby="footer-support"] {
+    grid-column: 1 / -1;
   }
 }

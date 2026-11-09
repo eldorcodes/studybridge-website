@@ -1,69 +1,53 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, Route, Routes, useLocation, useNavigationType } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/Home";
-import Contact from "./pages/Contact";
+import Footer from "./pages/Footer";
 import Navbar from "./pages/Navbar";
-import Pricing from "./pages/Pricing";
-import Projects from "./pages/Projects";
-import Payment from "./pages/Payment";
-import Privacy from "./pages/Privacy";   // ✅ Import Privacy
-import Terms from "./pages/Terms";       // ✅ Import Terms
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import Vireel from "./pages/Vireel";
+import { getPagePath, notFoundPage, pages, siteOrigin } from "./pages";
 
-function Footer() {
-  return (
-    <footer className="footer">
-      <p>© {new Date().getFullYear()} StudyBridge LLC. All rights reserved.</p>
-      <div className="footer-links">
-        <Link to="/privacy">Privacy Policy</Link>
-        <Link to="/terms">Terms & Conditions</Link>
-      </div>
-    </footer>
-  );
-}
+export default function App() {
+  const location = useLocation();
+  const navigationType = useNavigationType();
+  const pathname = getPagePath(location.pathname);
+  const page = pages[pathname] ?? notFoundPage;
 
-function Success() {
-  return (
-    <div className="page success">
-      <h1>✅ Payment Successful!</h1>
-      <p>Thanks for subscribing to StudyBridge LLC 🎉</p>
-      <Link to="/" className="btn">Back Home</Link>
-    </div>
-  );
-}
+  useEffect(() => {
+    document.title = page.title;
+    for (const selector of ['meta[name="description"]', 'meta[property="og:description"]']) {
+      document.querySelector(selector).content = page.description;
+    }
+    document.querySelector('meta[property="og:title"]').content = page.title;
+    const canonical = page.canonical ?? pathname;
+    document.querySelector('link[rel="canonical"]').href = siteOrigin + canonical;
+    document.querySelector('meta[property="og:url"]').content = siteOrigin + canonical;
+    document.querySelector('meta[name="robots"]').content = page.robots ?? "index, follow";
+  }, [page, pathname]);
 
-function Cancel() {
-  return (
-    <div className="page cancel">
-      <h1>❌ Payment Canceled</h1>
-      <p>No worries — you can subscribe anytime.</p>
-      <Link to="/" className="btn">Back Home</Link>
-    </div>
-  );
-}
+  useEffect(() => {
+    if (navigationType !== "POP" && !location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [location, navigationType]);
 
-function App() {
   return (
-    <Router>
+    <>
+      <a className="skip-link" href="#page-content">Skip to content</a>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/pricing" element={<Pricing />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/projects" element={<Projects />} />
-         <Route path="/vireel" element={<Vireel />} />
-        <Route path="/payment" element={<Payment />} />
-        <Route path="/privacy" element={<PrivacyPolicy />} />  
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />   {/* ✅ Privacy route */}
-        <Route path="/terms" element={<Terms />} />         {/* ✅ Terms route */}
-        <Route path="/success" element={<Success />} />
-        <Route path="/cancel" element={<Cancel />} />
-      </Routes>
+      <div id="page-content" tabIndex={-1}>
+        <Routes location={{ ...location, pathname }}>
+          {Object.entries(pages).map(([path, route]) => (
+            <Route key={path} path={path} Component={route.Component} />
+          ))}
+          <Route path="*" element={
+            <main className="page">
+              <h1>Page not found</h1>
+              <p>The page you’re looking for may have moved.</p>
+              <Link to="/" className="btn">Back to home</Link>
+            </main>
+          } />
+        </Routes>
+      </div>
       <Footer />
-    </Router>
+    </>
   );
 }
-
-export default App;

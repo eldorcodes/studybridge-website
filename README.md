@@ -1,16 +1,24 @@
-# React + Vite
+# StudyBridge LLC website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The company site for StudyBridge’s mobile utilities, education apps, and AI tools.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Run `npm ci` and `npm run dev`. Run `npm run build` to generate the production site in `dist`. The build renders the React routes to HTML, then the browser hydrates those pages for interactive navigation.
 
-## React Compiler
+Page components and metadata are registered in `src/pages.js`. To add an app to the featured catalog, update `src/pages/Projects.jsx`.
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Amplify Hosting
 
-## Expanding the ESLint configuration
+The GitHub-connected Amplify deployment uses `amplify.yml` to build and publish all files in `dist`. Each route is emitted as both a flat HTML file and a directory index so Amplify can serve clean URLs with or without a trailing slash. For example, `/privacy` can use `privacy.html` and `/privacy/` can use `privacy/index.html`. Both contain the policy in the HTML and declare `/privacy` as the canonical URL. The legacy `/privacy-policy` URL also serves the policy.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+After the production branch finishes deploying, verify both privacy URLs and the terms page with a fresh HTTP GET:
+
+```sh
+curl -fsSL https://www.studybridgeapps.com/privacy | grep -o '<h1[^>]*>Privacy Policy</h1>'
+curl -fsSL https://www.studybridgeapps.com/privacy/ | grep -o '<h1[^>]*>Privacy Policy</h1>'
+curl -fsSL https://www.studybridgeapps.com/privacy-policy | grep -o '<h1[^>]*>Privacy Policy</h1>'
+curl -fsSL -o /dev/null -w '%{http_code}\n' https://www.studybridgeapps.com/terms
+```
+
+If Amplify serves a different page after a successful build, check the app’s **Rewrites and redirects** for a catch-all 200 rule or an explicit rule that intercepts the affected route. Amplify’s built-in clean URL routing can serve these generated files directly.

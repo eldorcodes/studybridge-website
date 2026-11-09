@@ -1,72 +1,54 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
-function Home() {
+export default function Home() {
   return (
-    <div className="home-container">
-      {/* Hero Section */}
+    <main className="home-container">
       <section className="hero">
         <h1>StudyBridge LLC</h1>
         <p className="tagline">
-          Educational & Utility SaaS for students and scholars 🚀
+          Mobile utilities for everyday tasks, plus AI tools for creating and learning.
         </p>
-        <Link to="/pricing" className="btn-primary">
-          View Pricing Plans
-        </Link>
+        <Link to="/projects" className="btn-primary">Explore our apps</Link>
       </section>
 
-      {/* About Section */}
       <section className="about">
-        <h2>About Us</h2>
+        <h2>Practical apps for everyday tasks</h2>
         <p>
-          StudyBridge LLC is building the next generation of educational and
-          utility apps designed to help students, researchers, and small shops
-          succeed. From productivity tools to interactive learning apps, we
-          provide solutions that save time, simplify tasks, and empower your
-          academic journey.
+          StudyBridge LLC builds focused apps for working with documents, photos,
+          and video. We also build educational apps and AI tools, including a
+          study guide for international students and a video maker that works
+          from text prompts and images.
         </p>
       </section>
 
-      {/* Features Section */}
       <section className="features">
-        <h2>Why Choose StudyBridge?</h2>
+        <h2>Find the right tool</h2>
         <div className="features-grid">
           <div className="feature-card">
-            <h3>📚 Student Focused</h3>
-            <p>Apps designed with students and scholars in mind.</p>
+            <h3>Documents</h3>
+            <p>Merge PDFs, turn photos into documents, and convert between PDF and Word.</p>
           </div>
           <div className="feature-card">
-            <h3>⚡ Productivity</h3>
-            <p>Boost your efficiency with time-saving tools.</p>
+            <h3>Photos &amp; utilities</h3>
+            <p>Convert HEIC images, prepare passport photos, and create QR codes.</p>
           </div>
           <div className="feature-card">
-            <h3>🌍 Accessible</h3>
-            <p>Cloud-based, works everywhere, anytime.</p>
+            <h3>AI tools</h3>
+            <p>Create videos from text or images with Vireel, or check suspicious messages with ScamShield AI.</p>
           </div>
           <div className="feature-card">
-            <h3>💡 Affordable</h3>
-            <p>Flexible pricing plans that fit your budget.</p>
+            <h3>Education</h3>
+            <p>Find guidance on the F-1 visa process for international students.</p>
           </div>
         </div>
       </section>
 
-      {/* Pricing Section */}
       <section className="pricing-preview">
-        <h2>Get Started Today</h2>
-        <p>
-          Join hundreds of students and researchers already using StudyBridge
-          apps to simplify their work and learning.
-        </p>
-        <Link to="/pricing" className="btn-primary">
-          Choose Your Plan
-        </Link>
+        <h2>Have a question about an app?</h2>
+        <p>Contact StudyBridge for product support, feedback, or general inquiries.</p>
+        <Link to="/contact" className="btn-primary">Contact support</Link>
       </section>
-
-      {/* Footer */}
-    
-    </div>
+    </main>
   );
 }
-
-export default Home;

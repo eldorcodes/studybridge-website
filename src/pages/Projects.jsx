@@ -1,4 +1,3 @@
-import React from "react";
 import {
   FaBook,
   FaFilePdf,
@@ -39,8 +38,8 @@ export default function Projects() {
       icon: <FaFilePdf className="icon" />,
     },
     {
-      name: "QR Code Generator",
-      link: "https://apps.apple.com/us/app/id-photo-maker-passport-id/id6751552756",
+      name: "QR Code Generator Expert",
+      link: "https://apps.apple.com/us/app/qr-code-generator-expert/id6751783656",
       desc: "Quickly generate QR codes for links, text, and more.",
       icon: <FaQrcode className="icon" />,
     },
@@ -71,7 +70,7 @@ export default function Projects() {
   ];
 
   return (
-    <div className="projects-page">
+    <main className="projects-page">
       <h1 className="projects-title">Our Projects</h1>
       <p className="projects-subtitle">
         Explore the apps and tools we’ve built so far to make work and study easier.
@@ -92,7 +91,7 @@ export default function Projects() {
           </a>
         ))}
       </div>
-    </div>
+    </main>
   );
 }
 
