@@ -3,9 +3,9 @@ import "./PrivacyPolicy.css";
 
 export default function PrivacyPolicy({
   companyName = "StudyBridge LLC",
-  contactEmail = "support@studybridge.io",
-  websiteUrl = "https://studybridge.io",
-  lastUpdated = "March 03, 2026",
+  contactEmail = "support@studybridgeapps.com",
+websiteUrl = "https://www.studybridgeapps.com/",
+lastUpdated = "November 9, 2026",
   retentionHours = 2,
   apps = [
     // ✅ NEW: ScamShield AI (offline)
@@ -21,6 +21,17 @@ export default function PrivacyPolicy({
       ],
       retentionHours: 0,
     },
+    {
+  id: "tankfrontier",
+  name: "Tank Frontier",
+  bullets: [
+    "Tank Frontier is a single-player game and does not require an account.",
+    "Campaign progress and related game data are saved locally on your device. We do not operate a server that stores your campaign progress.",
+    "The game uses Google AdMob and Google's consent tools. Google and its advertising partners may process device or advertising identifiers, IP address, ad interactions, consent choices, and diagnostic information to provide and measure ads. Processing and ad personalization depend on your settings, location, and consent choices.",
+    "Apple App Store or Google Play processes in-app purchases. We do not receive your full payment card details. The store may provide purchase information needed to enable or restore a purchase.",
+    "Deleting the app or clearing its storage removes locally stored campaign progress. Purchase records held by Apple or Google are managed by those stores.",
+  ],
+},
 
     // ✅ NEW: Video to GIF Expert
     {
